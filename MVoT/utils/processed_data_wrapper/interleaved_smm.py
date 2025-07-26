@@ -166,7 +166,7 @@ class Maze(datasets.GeneratorBasedBuilder):
                             # os.path.relpath(path, start) 可以生成从 start 到 path 的相对路径
                             relative_path = os.path.relpath(file_path, data_dirs)
                             image_paths.append(relative_path)
-                text_file = os.path.join('./step_descrip',f"{id}_description.json")
+                text_file = os.path.join('/lustre/fsw/portfolios/nvr/users/ymingli/projects/SMM_data/step_descrip',f"{id}_description.json")
                 with open(text_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     descriptions = data.get("descriptions")
