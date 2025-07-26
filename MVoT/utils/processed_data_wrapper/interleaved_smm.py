@@ -68,7 +68,7 @@ class Maze(datasets.GeneratorBasedBuilder):
             name="processed_smm",
             tasks=["simulation"],
             modes=["single_step_visualization", "action_reasoning"],
-            data_dir="/home/baiqiao/spatial_generation/Spatial_Mental_Mani/data/reorganized_by_view_per_folder"
+            data_dir="/lustre/fsw/portfolios/nvr/users/ymingli/projects/SMM_data/data/reorganized_by_view_per_folder"
         )
     ]
 
@@ -166,7 +166,7 @@ class Maze(datasets.GeneratorBasedBuilder):
                             # os.path.relpath(path, start) 可以生成从 start 到 path 的相对路径
                             relative_path = os.path.relpath(file_path, data_dirs)
                             image_paths.append(relative_path)
-                text_file = os.path.join('/home/baiqiao/spatial_generation/Spatial_Mental_Mani/data/step_descrip',f"{id}_description.json")
+                text_file = os.path.join('./step_descrip',f"{id}_description.json")
                 with open(text_file, 'r', encoding='utf-8') as f:
                     data = json.load(f)
                     descriptions = data.get("descriptions")
